@@ -1,0 +1,24 @@
+.emergency-marquee {
+    width: 100%;
+    overflow: hidden;
+    background-color: #ff4d4d; /* Red background for visibility */
+    color: #fff;
+    padding: 8px 0;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 25s linear infinite;
+}
+
+.marquee-item {
+    margin-right: 50px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}

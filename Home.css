@@ -1,0 +1,273 @@
+/*================= ROOT =================*/
+.home-root {
+  background: #f9fafb;
+  font-family: "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================= HERO ================= */
+.hero {
+  height: 95vh;
+  position: relative;
+  background-image: url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding-left: 8%;
+  color: #fff;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.3)
+  );
+}
+
+.hero-content {
+  position: relative;
+  max-width: 600px;
+  animation: fadeUp 1.2s ease;
+}
+
+.hero-badge {
+  background: rgba(255,255,255,0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  line-height: 1.15;
+  margin: 18px 0;
+}
+
+.hero-title span {
+  color: #ffd369;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-primary {
+  background: #ffd369;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 14px 26px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* Floating tags */
+.hero-float {
+  position: absolute;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-1 { top: 20%; right: 20%; }
+.float-2 { top: 45%; right: 10%; animation-delay: 1.5s; }
+.float-3 { bottom: 20%; right: 25%; animation-delay: 3s; }
+
+/* ================= DESTINATIONS ================= */
+.destination-strip {
+  padding: 70px 8%;
+}
+
+.destination-strip h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+.destination-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.destination-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: transform 0.4s;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+}
+
+.dest-image {
+  height: 170px;
+  background-size: cover;
+  background-position: center;
+}
+
+.dest-info {
+  padding: 16px;
+}
+
+.dest-info h3 {
+  margin: 0;
+}
+
+.dest-info span {
+  color: #666;
+  font-size: 14px;
+}
+
+/* ================= MAP ================= */
+.map-section {
+  padding: 80px 8%;
+  background: #111;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  overflow: visible; /* do not clip the map */
+}
+
+.map-text {
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+/* this is the parent of MapContainer on Home */
+.map-box {
+  position: relative;
+  height: 420px;          /* fixed height for map */
+  border-radius: 18px;
+  overflow: hidden;       /* just for rounded corners */
+}
+
+/* Leaflet container MUST fill parent */
+.map-box .leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 18px;
+  background: #e5e7eb;
+  z-index: 10;
+}
+
+/* ================= FOOTER ================= */
+.home-footer {
+  padding: 20px;
+  text-align: center;
+  background: #000;
+  color: #aaa;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+/* ================= EXTRA FLOATING TAG POSITIONS ================= */
+.float-4 {
+  top: 30%;
+  right: 12%;
+  animation-delay: 0.8s;
+}
+
+.float-5 {
+  top: 55%;
+  right: 6%;
+  animation-delay: 2s;
+}
+
+.float-6 {
+  bottom: 22%;
+  right: 14%;
+  animation-delay: 3.2s;
+}
+
+.float-7 {
+  top: 18%;
+  right: 35%;
+  animation-delay: 1.2s;
+}
+
+.float-8 {
+  bottom: 35%;
+  right: 12%;
+  animation-delay: 2.6s;
+}
+
+.float-9 {
+  top: 65%;
+  right: 30%;
+  animation-delay: 3.8s;
+}
+
+.float-10 {
+  bottom: 12%;
+  right: 42%;
+  animation-delay: 4.6s;
+}
+
+/* Slight variation for natural motion */
+.hero-float:nth-child(even) {
+  animation-duration: 7s;
+}
+
+.hero-float:nth-child(odd) {
+  animation-duration: 5.5s;
+}
+
+/* Fix Leaflet internal stacking */
+.leaflet-pane {
+  z-index: 20 !important;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 30 !important;
+}
+
+/* Markers & popups */
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-popup {
+  z-index: 40 !important;
+}
+
+/* Zoom buttons readable */
+.leaflet-control-zoom a {
+  background: #fff !important;
+  color: #000 !important;
+  border-radius: 6px;
+  border: none;
+}
