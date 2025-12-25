@@ -3,8 +3,8 @@
 // const UNSPLASH_KEY = "AqrTCvrp-LaXURfx-wmY3z7d-HCTlVcR8gINzofa-X4"; // optional, replace or set to ""
 //const NEWSAPI_KEY = "d5ffd6adbbce45cda387ce674c18b0e5"; // replace with your NewsAPI key
 
-
-
+// username- stsm
+// password- stsm123 
 
 import React, { useEffect, useState } from "react";
 import "./Home.css";
